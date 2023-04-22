@@ -1,30 +1,42 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9222667&assignment_repo_type=AssignmentRepo)
-# CMP2241_Task 3 --> Deque
+# Deque Implementation in C++
+## Overview
+A deque (double-ended queue) is a linear data structure that supports insertion and deletion of elements at both ends, front and rear. It allows operations such as push, pop, enqueue and dequeue in constant time.
 
-## Name: mohamed elsayed eid
-## Sec: 2
-## B.N.: 13
+This repository contains the implementation of deque data structure in C++ without using the STL library. It includes the following functionalities:
 
+*Push Front: Insert an element at the front of the deque.
+* Push Back: Insert an element at the back of the deque.
+* Pop Front: Remove an element from the front of the deque.
+* Pop Back: Remove an element from the back of the deque.
+* Front: Get the value of the front element.
+* Back: Get the value of the back element.
+* Size: Get the size of the deque.
+* Empty: Check if the deque is empty.
+# Usage
+To use this deque implementation in your C++ program, you can include the deque.h header file in your code and create an instance of the Deque class.
 
-### Implement this task using c++
-In this task you are required to implement the function signatures defined in deque.h in deque.cpp
-other files included:
-1. main.cpp --> this is to test your application
-2. tests folder which includes catch.hpp, test.cpp --> these are for testing ### don't modify them, in case these files have been modified, the submission will fail
+```cpp
 
-Read the comments carefully and fill the missing lines
-To run the tests before submission, from the command line or Terminal, run the following commands
+#include "deque.h"
 
-make test
+int main() {
+  Deque deque;
 
-**In case of invalid index, return -1**
+  deque.push_front(1);
+  deque.push_back(2);
+  deque.push_front(3);
+  deque.push_back(4);
 
----
+  std::cout << "Front element: " << deque.front() << std::endl; // Output: 3
+  std::cout << "Back element: " << deque.back() << std::endl; // Output: 4
 
-### General Notes
-- This is an individual based assignment.
-- The due date for the submission of this phase is Sunday, 14/11/2022 at 11:59 pm.
-- **Due to the limited balance of our github account autograder, you are only allowd to submit 2 times**, please check locally before submitting by running the test file
-- Each hour delay will lead to one-point reduction in the homework’s grade.
-- Your code should be clear, understandable, and documented (commented) and follow a consistent naming convention for variables and functions.
-- You are permitted to discuss the following problems with others in the class. However, you must write up your own solutions to these problems. Any indication to the contrary will be considered an act of academic dishonesty. 
+  deque.pop_front();
+  deque.pop_back();
+
+  std::cout << "Size: " << deque.size() << std::endl; // Output: 2
+
+  return 0;
+}
+```
+Contributing
+If you find any bugs or want to suggest new features, feel free to open an issue or submit a pull request.
